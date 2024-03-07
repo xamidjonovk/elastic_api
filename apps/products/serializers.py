@@ -7,7 +7,6 @@ from .documents import ProductDocument
 
 
 class ProductDocumentSerializer(DocumentSerializer):
-    """Serializer for the Book document."""
 
     class Meta:
         document = ProductDocument

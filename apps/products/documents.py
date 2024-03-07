@@ -20,14 +20,14 @@ class ProductDocument(Document):
         analyzer=html_strip,
         fields={
             'raw': fields.KeywordField(),
-            'ngram': fields.TextField(analyzer=ngram_analyzer),  # N-gram field for partial matches
+            'ngram': fields.TextField(analyzer=ngram_analyzer),
         }
     )
     description = fields.TextField(
         analyzer=html_strip,
         fields={
             'raw': fields.TextField(analyzer='keyword'),
-            'ngram': fields.TextField(analyzer=ngram_analyzer),  # N-gram field for partial matches
+            'ngram': fields.TextField(analyzer=ngram_analyzer),
         }
     )
 

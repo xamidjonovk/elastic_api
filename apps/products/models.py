@@ -1,24 +1,20 @@
 from django.db import models
 
 
-class ProductCategory(models.Model):
-    name = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
-
-
-class Product(models.Model):
+class ProductTypes:
     ELECTRONICS = 'EL'
     CLOTHING = 'CL'
     FOOD = 'FD'
-    PRODUCT_TYPES = [
+    choices = (
         (ELECTRONICS, 'Electronics'),
         (CLOTHING, 'Clothing'),
-        (FOOD, 'Food'),
-    ]
+        (FOOD, 'Food')
+    )
+
+
+class Product(models.Model):
     name = models.CharField(max_length=255)
-    product_type = models.CharField(max_length=255, choices=PRODUCT_TYPES)
+    product_type = models.CharField(max_length=255, choices=ProductTypes.choices)
     size = models.CharField(max_length=255)
     description = models.TextField()
 
